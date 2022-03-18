@@ -1,0 +1,6 @@
+export const ActionTypes = {
+  ADD_BRAND: 'ADD_BRAND',
+  REMOVE_BRAND: 'REMOVE_BRAND',
+  UPDATE_BRAND: 'UPDATE_BRAND',
+  SEARCH_BRAND: 'SEARCH_BRAND',
+};
