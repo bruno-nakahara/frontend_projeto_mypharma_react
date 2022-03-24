@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { call, put, takeEvery, fork } from 'redux-saga/effects';
 import {
   deleteBrandFail,
@@ -56,9 +57,11 @@ function* handleCreateBrand({ payload }) {
     const response = yield call(postBrandsService, payload);
 
     if (response.status === 201) {
+      toast('Criado com sucesso!');
       yield put(postBrandSuccess());
     }
   } catch (err) {
+    toast('Erro, não foi possível criar!');
     yield put(postBrandFail(err.toString()));
   }
 }
@@ -72,9 +75,11 @@ function* handleEditBrand({ payload }) {
     const response = yield call(editBrandsService, payload);
 
     if (response.status === 200) {
+      toast('Atualizado com sucesso!');
       yield put(editBrandSuccess());
     }
   } catch (err) {
+    toast('Erro, não foi possível atualizar!');
     yield put(editBrandFail(err.toString()));
   }
 }
@@ -88,9 +93,11 @@ function* handleDeleteBrand({ payload }) {
     const response = yield call(deleteBrandsService, payload);
 
     if (response.status === 200) {
+      toast('Deletado com sucesso!');
       yield put(deleteBrandSuccess());
     }
   } catch (err) {
+    toast('Erro, não foi possível deletar!');
     yield put(deleteBrandFail(err.toString()));
   }
 }
