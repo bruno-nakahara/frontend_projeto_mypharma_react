@@ -14,7 +14,7 @@ import {
   SEARCH_PRODUCTS,
   SEARCH_PRODUCTS_FAIL,
   SEARCH_PRODUCTS_SUCCESS,
-} from '../constants/brands';
+} from '../constants/products';
 
 export const getProducts = () => {
   return {
@@ -22,10 +22,10 @@ export const getProducts = () => {
   };
 };
 
-export const setProducts = brands => {
+export const setProducts = products => {
   return {
     type: GET_PRODUCTS_SUCCESS,
-    payload: brands,
+    payload: products,
   };
 };
 

@@ -1,7 +1,7 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import Teste from './pages/teste';
+import { Teste } from './pages/teste';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const token = sessionStorage.getItem('token');
